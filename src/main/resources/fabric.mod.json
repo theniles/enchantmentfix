@@ -1,0 +1,37 @@
+{
+    "schemaVersion": 1,
+    "id": "nenchantfix",
+    "version": "${version}",
+
+    "name": "Nile Enchantment Fix",
+    "description": "Get every type of protection on your armour, and more!",
+    "authors": [
+        "The Nile"
+    ],
+    "contact": {
+        "homepage": "https://fabricmc.net/",
+        "sources": "https://github.com/FabricMC/fabric-example-mod"
+    },
+
+    "license": "CC0-1.0",
+    "icon": "assets/nenchantfix/icon.png",
+
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "net.nile.enchant.fix.EnchantFix"
+        ]
+    },
+    "mixins": [
+        "nenchantfix.mixins.json"
+    ],
+
+    "depends": {
+        "fabricloader": ">=0.7.4",
+        "fabric": "*",
+        "minecraft": "1.16.x"
+    },
+    "suggests": {
+        "flamingo": "*"
+    }
+}
