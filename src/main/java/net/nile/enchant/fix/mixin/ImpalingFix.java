@@ -12,9 +12,9 @@ import net.minecraft.entity.EquipmentSlot;
 
 @Mixin(ImpalingEnchantment.class)
 public class ImpalingFix {
-    @Inject(method="<init>(Lnet/minecraft/enchantment/Enchantment$Rarity;[Lnet/minecraft/entity/EquipmentSlot;)V", at = @At("TAIL"))
-    private void nileConstructor(Enchantment.Rarity rarity, EquipmentSlot[] slot ,CallbackInfo cb)
-    {
-        ((EnchantmentAccessor)((Enchantment)(Object)this)).setType(EnchantmentTarget.WEAPON);
-    }
+    // @Inject(method="<init>(Lnet/minecraft/enchantment/Enchantment$Rarity;[Lnet/minecraft/entity/EquipmentSlot;)V", at = @At("TAIL"))
+    // private void nileConstructor(Enchantment.Rarity rarity, EquipmentSlot[] slot ,CallbackInfo cb)
+    // {
+    //     ((EnchantmentAccessor)((Enchantment)(Object)this)).setType(EnchantmentTarget.WEAPON);
+    // }
 }

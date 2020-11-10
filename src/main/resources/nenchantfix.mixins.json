@@ -3,7 +3,7 @@
     "minVersion": "0.8",
     "package": "net.nile.enchant.fix.mixin",
     "compatibilityLevel": "JAVA_8",
-    "mixins": ["CompatibilityFix", "InfinityFix", "ProtectionFix", "DamageFix", "AnvilFix", "AnvilAccessor", "ForgingAccessor", "EnchantmentAccessor", "ImpalingFix"],
+    "mixins": ["CompatibilityFix", "InfinityFix", "ProtectionFix", "DamageFix", "AnvilFix", "AnvilAccessor", "ForgingAccessor", "EnchantmentAccessor", "ImpalingFix", "AcceptableItemFix", "PiercingEnchantmentFix", "MultishotEnchantmentFix", "RiptideEnchantmentFix"],
     "client": ["AnvilScreenFix", "AbstractScreenAccessor", "HandledScreenAccessor", "AnvilScreenAccessor"],
     "injectors": {
         "defaultRequire": 1

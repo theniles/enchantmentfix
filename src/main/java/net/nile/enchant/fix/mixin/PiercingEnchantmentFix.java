@@ -1,25 +1,15 @@
 package net.nile.enchant.fix.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-//MendingEnchantment
-//PlayerEntity
-//ItemStack
-//BowItem
-//ToolItem
-//ItemStack
-//ExperienceOrbEntity
-//Enchantment
-//AnvilScreenHandler
-//ImpalingEnchantment
-//FireAspectEnchantment
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.InfinityEnchantment;
 
-@Mixin(InfinityEnchantment.class)
-public class InfinityFix {
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.PiercingEnchantment;
+//RiptideEnchantment
+@Mixin(PiercingEnchantment.class)
+public class PiercingEnchantmentFix {
     @Inject(method = "canAccept(Lnet/minecraft/enchantment/Enchantment;)Z", at = @At("HEAD"), cancellable = true)
     private void nileCanAccept(Enchantment ench, CallbackInfoReturnable<Boolean> cb)
     {

@@ -8,6 +8,6 @@ import net.minecraft.enchantment.EnchantmentTarget;
 
 @Mixin(Enchantment.class)
 public interface EnchantmentAccessor{
-@Accessor("type")
-public void setType(EnchantmentTarget t);
+// @Accessor("type")
+// public void setType(EnchantmentTarget t);
 }
