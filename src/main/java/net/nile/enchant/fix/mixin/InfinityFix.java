@@ -15,6 +15,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 //AnvilScreenHandler
 //ImpalingEnchantment
 //FireAspectEnchantment
+//Enchantment
+//AxeItem
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.InfinityEnchantment;
 

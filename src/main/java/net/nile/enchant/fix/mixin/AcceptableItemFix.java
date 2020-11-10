@@ -8,8 +8,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.ImpalingEnchantment;
 import net.minecraft.enchantment.FireAspectEnchantment;
+import net.minecraft.enchantment.KnockbackEnchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.TridentItem;
@@ -33,6 +36,34 @@ public class AcceptableItemFix {
         else if(ench instanceof FireAspectEnchantment)
         {
             if(item instanceof TridentItem || item instanceof AxeItem)
+            {
+                cb.setReturnValue(true);
+            }
+        }
+        else if(ench instanceof KnockbackEnchantment)
+        {
+            if(item instanceof AxeItem || item == Items.STICK || item instanceof TridentItem)
+            {
+                cb.setReturnValue(true);
+            }
+        }
+        else if(ench == Enchantments.LOOTING)
+        {
+            if(item instanceof AxeItem || item instanceof TridentItem)
+            {
+                cb.setReturnValue(true);
+            }
+        }
+        else if(ench == Enchantments.SMITE)
+        {
+            if(item instanceof TridentItem)
+            {
+                cb.setReturnValue(true);
+            }
+        }
+        else if(ench == Enchantments.BANE_OF_ARTHROPODS)
+        {
+            if(item instanceof TridentItem)
             {
                 cb.setReturnValue(true);
             }
