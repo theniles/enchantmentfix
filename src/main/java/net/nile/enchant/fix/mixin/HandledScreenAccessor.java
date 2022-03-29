@@ -6,6 +6,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.text.Text;
 
 @Mixin(HandledScreen.class)
 public interface HandledScreenAccessor {
@@ -13,9 +14,6 @@ public interface HandledScreenAccessor {
     //TridentItem
     @Accessor("handler")
     public ScreenHandler getHandler();
-
-    @Accessor("playerInventory")
-    public PlayerInventory getPlayerInventory();
 
     @Accessor("backgroundWidth")
     public int getBackgroundWidth();
@@ -34,4 +32,7 @@ public interface HandledScreenAccessor {
 
     @Accessor("playerInventoryTitleY")
     public int getPlayerInventoryTitleY();
+
+    @Accessor("playerInventoryTitle")
+    public Text getPlayerInventoryTitle();
 }

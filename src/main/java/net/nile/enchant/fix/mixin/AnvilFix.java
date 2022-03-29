@@ -43,7 +43,7 @@ public class AnvilFix {
            j = j + itemStack.getRepairCost() + (itemStack3.isEmpty() ? 0 : itemStack3.getRepairCost());
            ttthis.setRepairUsage(0);
            if (!itemStack3.isEmpty()) {
-              boolean bl = itemStack3.getItem() == Items.ENCHANTED_BOOK && !EnchantedBookItem.getEnchantmentTag(itemStack3).isEmpty();
+              boolean bl = itemStack3.getItem() == Items.ENCHANTED_BOOK && !EnchantedBookItem.getEnchantmentNbt(itemStack3).isEmpty();
               int o;
               int p;
               int q;
@@ -114,7 +114,7 @@ public class AnvilFix {
                     int u = (Integer)map2.get(enchantment);
                     u = t == u ? u + 1 : Math.max(u, t);
                     boolean bl4 = enchantment.isAcceptableItem(itemStack);
-                    if (tttthis.getPlayer().abilities.creativeMode || itemStack.getItem() == Items.ENCHANTED_BOOK) {
+                    if (tttthis.getPlayer().getAbilities().creativeMode || itemStack.getItem() == Items.ENCHANTED_BOOK) {
                        bl4 = true;
                     }
   

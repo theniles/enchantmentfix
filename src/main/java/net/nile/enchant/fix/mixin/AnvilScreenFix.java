@@ -19,15 +19,16 @@ public class AnvilScreenFix {
    @Inject(method = "drawForeground(Lnet/minecraft/client/util/math/MatrixStack;II)V", at = @At("HEAD"), cancellable = true)
    private void drawForeground(MatrixStack matrices, int mouseX, int mouseY, CallbackInfo cb) {
 
-      AnvilScreenAccessor anvilScreen = (AnvilScreenAccessor)(Object)this;
-
       HandledScreenAccessor handledScreen = (HandledScreenAccessor)(Object)this;
 
       AbstractScreenAccessor abstractScreen = (AbstractScreenAccessor)(Object)this;
 
+      //agagaggaguagaugauaguaguuga
+      AnvilScreenAccessor anvilScreen = (AnvilScreenAccessor)(Object)this;
+
         RenderSystem.disableBlend();
         abstractScreen.getTextRenderer().draw(matrices, abstractScreen.getTitle(), (float)handledScreen.getTitleX(), (float)handledScreen.getTitleY(), 4210752);
-        abstractScreen.getTextRenderer().draw(matrices, handledScreen.getPlayerInventory().getDisplayName(), (float)handledScreen.getPlayerInventoryTitleX(), (float)handledScreen.getPlayerInventoryTitleY(), 4210752);
+        abstractScreen.getTextRenderer().draw(matrices, handledScreen.getPlayerInventoryTitle(), (float)handledScreen.getPlayerInventoryTitleX(), (float)handledScreen.getPlayerInventoryTitleY(), 4210752);
         int i = ((AnvilScreenHandler)handledScreen.getHandler()).getLevelCost();
         if (i > 0) {
            int j = 8453920;
@@ -39,7 +40,7 @@ public class AnvilScreenFix {
               text3 = null;
            } else {
               text3 = new TranslatableText("container.repair.cost", new Object[]{i});
-              if (!handledScreen.getHandler().getSlot(2).canTakeItems(handledScreen.getPlayerInventory().player)) {
+              if (!handledScreen.getHandler().getSlot(2).canTakeItems(anvilScreen.getPlayer())) {
                  j = 16736352;
               }
            }
